@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_relativelayout"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+
+<androidx.core.widget.NestedScrollView
+    android:background="@color/transparent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:background="@color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+            <SearchView
+                app:theme="@style/Widget.AppCompat.SearchView"
+                android:queryHint="Enter city name here "
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_height="40dp"
+                android:id="@+id/city_search"
+                android:layoutDirection="rtl"
+                android:layout_alignParentRight="true"/>
+
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="30dp"
+        android:layout_below="@+id/recylerview"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/youtube_player"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_below="@+id/city_search"
+                android:id="@+id/cardview"
+                android:padding="4dp"
+                android:layout_margin="6dp"
+                android:elevation="6dp"
+                android:backgroundTint="@color/transGray"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/image_view_current"
+                    android:layout_gravity="center_horizontal|center_vertical"/>
+
+                <TextView
+                    android:typeface="sans"
+                    android:layout_margin="12dp"
+                    android:layout_gravity="top"
+                    android:textColor="@android:color/white"
+                    android:textSize="24dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/name"/>
+                <TextView
+                    android:layout_margin="12dp"
+                    android:layout_gravity="bottom"
+                    android:textColor="@android:color/white"
+                    android:textSize="18dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/description"/>
+                <TextView
+                    android:layout_margin="8dp"
+                    android:layout_gravity="bottom|right"
+                    android:textColor="@android:color/white"
+                    android:textSize="24dp"
+                    android:layout_below="@+id/name"
+                    android:layout_alignRight="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/temp"/>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:layout_margin="12dp"
+                android:typeface="sans"
+                android:id="@+id/fiveday"
+                android:layout_below="@+id/cardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="24dp"
+                android:text="5 day / 3 hour forecast"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/fiveday"
+                android:layout_width="match_parent"
+                android:id="@+id/recylerview"
+                android:layout_height="match_parent" />
+
+
+    </RelativeLayout>
+
+
+</androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>
